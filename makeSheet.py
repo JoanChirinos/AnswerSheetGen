@@ -19,7 +19,7 @@ def go():
         
     cnum = int(fs.getvalue('choices'))
 
-    testname = fs.getvalue('testName', 'Your Test')
+    testname = fs.getvalue('testName')
     if testname.strip() == '':
         testName = 'YourTest'
     #cnum = 4
