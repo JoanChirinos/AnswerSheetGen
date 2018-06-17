@@ -10,4 +10,4 @@ def go():
     for i in fs.keys():
         print i + ": " + str(fs.getvalue(i))
 
-go():
+go()
