@@ -54,15 +54,11 @@ def go():
     toWrite = ""
     
     fs = cgi.FieldStorage()
-    #corrects = fs.getvalue('correctAnswers');
-    corrects = "1234"
-    fs = {'1': '1', '2': '2', '3': '4', '4': '4'}
-    #qnum = fs.getvalue('qnum', str(len(fs.keys()) - 2))
-    qnum = "4"
+    corrects = fs.getvalue('correctAnswers')
+    qnum = fs.getvalue('qnum', str(len(fs.keys()) - 2))
     for q in range(1, int(qnum) + 1):
         try:
-            #toWrite += ans(q, fs.getvalue(str(q)), correct[q - 1])
-            toWrite += ans(q, fs[str(q)], corrects[q - 1])
+            toWrite += ans(q, fs.getvalue(str(q)), correct[q - 1])
         except:
             toWrite += ans(q, 'error', 'something went wrong here')
     print body[0] + toWrite + body[1]
