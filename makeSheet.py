@@ -18,6 +18,10 @@ def go():
         qnum = 50
         
     cnum = int(fs.getvalue('choices'))
+
+    testname = fs.getvalue('testName', 'Your Test')
+    if testname.strip() == '':
+        testName = 'YourTest'
     #cnum = 4
 
     body = ["""<!doctype html>
@@ -45,7 +49,8 @@ def go():
                 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
               </body>
             </html>"""]
-    toWrite = '<div class="md-space"></div>\n'
+    toWrite = '<div class="sm-space"></div>\n<div class="row"><div class="col-sm"><h1>' + testName + '</h1></div></div>\n\n'
+    toWrite += '<div class="md-space"></div>\n'
     for q in range(1, qnum + 1):
         if (q % 3 == 1):
             toWrite += '<div class="row">\n'
