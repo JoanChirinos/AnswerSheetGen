@@ -28,7 +28,7 @@
                 </div>
                 <div class="col-sm">
                     <form action="makeSheet.py" method="get" id="mainForm">
-                        <input type="text" name="testName" placeholder="Okay to leave blank" id="testName" class="form-control">
+                        <input type="text" name="testName" placeholder="Okay to leave blank" id="testName" class="form-control" form="mainForm">
                     </form>
                 </div>
             </div>
@@ -42,13 +42,13 @@
                                     <label for="numberOfQuestions">Number of Questions</label>
                                 </div>
                                 <div class="col-sm-7">
-                                    <input type="range" class="custom-range" id="numberOfQuestions" min="1" max="200" name="numberOfQuestions" value="100" onchange="updateFromRange();">
+                                    <input type="range" class="custom-range" id="numberOfQuestions" min="1" max="200" name="numberOfQuestions" value="100" onchange="updateFromRange();" form="mainForm">
                                 </div>
                             </div>
                             <div class="md-space"></div>
                             <div class="row align-items-center">
                                 <div class="col-sm-5">
-                                    <input type="number" class="form-control" name="questionDisplay" id="questionDisplay" value="100" onkeyup="updateFromDisplay();" max="200" min="1" step="1">
+                                    <input type="number" class="form-control" name="questionDisplay" id="questionDisplay" value="100" onkeyup="updateFromDisplay();" max="200" min="1" step="1" form="mainForm">
                                 </div>
                                 <div class="col-sm-7">
                                     <small>Please note that the number of questions should be from 1 to 200, inclusive.</small>
@@ -62,13 +62,13 @@
                                 <div class="col-sm-7">
                                     <div class="btn-group btn-group-toggle" data-toggle="buttons">
                                         <label class="btn btn-secondary active">
-                                            <input type="radio" name="options" id="option1" autocomplete="off" checked value="4"> 4
+                                            <input type="radio" name="options" id="option1" autocomplete="off" checked value="4" form="mainForm"> 4
                                         </label>
                                         <label class="btn btn-secondary">
-                                            <input type="radio" name="options" id="option2" autocomplete="off" value="5"> 5
+                                            <input type="radio" name="options" id="option2" autocomplete="off" value="5" form="mainForm"> 5
                                         </label>
                                     </div>
-                                    <input type="radio" name="options" id="option3" autocomplete="off" value="6"> 6
+                                    <input type="radio" name="options" id="option3" autocomplete="off" value="6" form="mainForm"> 6
                                 </div>
                             </div>
                             <div class="md-space"></div>
