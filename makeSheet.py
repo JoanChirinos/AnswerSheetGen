@@ -62,7 +62,7 @@ def go():
         
         if (q % 3 == 0 or q == qnum):
             toWrite += '</div>\n'
-    toWrite += '\n\n\n<div class="lg-space"></div>\n\n\n<div class="row text-center">\n<div class="col"><input class="btn btn-success btn-lg btn-block" type="submit" value="Submit"></div></div>'
+    toWrite += '\n\n\n<div class="lg-space"></div>\n\n\n<div class="row text-center">\n<div class="col"><input class="btn btn-success btn-lg btn-block" type="submit" value="Submit"></div></div><div class="lg-space"></div>'
 
     print body[0] + toWrite + body[1]
 
