@@ -15,9 +15,10 @@ def go():
         elif qnum > 200:
             qnum = 200
     except:
-        qnum = 100
+        qnum = 50
         
     cnum = int(fs.getvalue('choices'))
+    #cnum = 4
 
     body = ["""<!doctype html>
             <html lang="en">
@@ -33,10 +34,10 @@ def go():
                 <title>Answer Sheet Generator</title>
                 <link rel="stylesheet" type="text/css" href="style.css">
               </head>
-              <body>
+              <body><form action="gradeSheet.py" method="post"><div class="container text-center">
 
               """, """
-
+                </div></form>
                 <!-- Optional JavaScript -->
                 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
                 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -44,9 +45,23 @@ def go():
                 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
               </body>
             </html>"""]
-    toWrite = ""
+    toWrite = '<div class="md-space"></div>\n'
     for q in range(1, qnum + 1):
+        if (q % 3 == 1):
+            toWrite += '<div class="row">\n'
+
+        toWrite += '<div class="col-sm-4">' + str(q) + '<br/><div class="btn-group btn-group-toggle" data-toggle="buttons">\n'
+        for i in range(1, cnum + 1):
+            toWrite += '<label class="btn btn-secondary"><input required type="radio" name="' + str(q) + '" value="' + str(i) + '" autocomplete="off" checked>' + str(i) + '</label>\n'
+        toWrite += '</div></div>\n\n\n<div class="lg-space"></div>\n\n\n'
         
+        if (q % 3 == 0 or q == qnum):
+            toWrite += '</div>\n'
+    toWrite += '\n\n\n<div class="lg-space"></div>\n\n\n<div class="row text-center">\n<div class="col"><input class="btn btn-success btn-lg btn-block" type="submit" value="Submit"></div></div>'
+
+    print body[0] + toWrite + body[1]
+
+go()
 
 
 
