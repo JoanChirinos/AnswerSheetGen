@@ -15,6 +15,7 @@
         <title>Answer Sheet Generator</title>
     </head>
     <body>
+        <form action="makeSheet.py" method="get" id="mainForm">
         <div class="container text-center">
             <div class="row">
                 <div class="col text-center">
@@ -27,15 +28,13 @@
                     <label for="testName">Test name:</label>
                 </div>
                 <div class="col-sm">
-                    <form action="makeSheet.py" method="get" id="mainForm">
+                    
                         <input type="text" name="testName" placeholder="Okay to leave blank" id="testName" class="form-control" form="mainForm">
-                    </form>
                 </div>
             </div>
             <div class="md-space"></div>
             <div class="row">
                 <div class="col">
-                    <form action="makeSheet.py" method="get" id="mainForm">
                         <div class="form-group">
                             <div class="row">
                                 <div class="col-sm-5">
@@ -78,10 +77,11 @@
                                 </div>
                             </div>
                         </div>
-                    </form>
+                    
                 </div>
             </div>
         </div>
+        </form>
 
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
