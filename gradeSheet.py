@@ -57,10 +57,10 @@ def go():
     corrects = fs.getvalue('correctAnswers')
     qnum = fs.getvalue('qnum', str(len(fs.keys()) - 2))
     for q in range(1, int(qnum) + 1):
-        try:
-            toWrite += ans(q, fs.getvalue(str(q)), correct[q - 1])
-        except:
-            toWrite += ans(q, 'error', 'something went wrong here')
+##        try:
+        toWrite += ans(q, fs.getvalue(str(q)), correct[q - 1])
+##        except:
+##            toWrite += ans(q, 'error', 'something went wrong here')
     print body[0] + toWrite + body[1]
         
 def ans(num, choice, correct):
