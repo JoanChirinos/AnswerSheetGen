@@ -27,13 +27,15 @@
                     <label for="testName">Test name:</label>
                 </div>
                 <div class="col-sm">
-                    <input type="text" name="testName" placeholder="Okay to leave blank" id="testName" class="form-control">
+                    <form action="makeSheet.py" method="get" id="mainForm">
+                        <input type="text" name="testName" placeholder="Okay to leave blank" id="testName" class="form-control">
+                    </form>
                 </div>
             </div>
             <div class="md-space"></div>
             <div class="row">
                 <div class="col">
-                    <form action="makeSheet.py" method="get">
+                    <form action="makeSheet.py" method="get" id="mainForm">
                         <div class="form-group">
                             <div class="row">
                                 <div class="col-sm-5">
@@ -71,7 +73,7 @@
                             <div class="md-space"></div>
                             <div class="row">
                                 <div class="col">
-                                    <input type="submit" class="btn btn-primary" value="Make me an answer sheet!">
+                                    <input type="submit" class="btn btn-primary" value="Make me an answer sheet!" form="mainForm">
                                 </div>
                             </div>
                         </div>
