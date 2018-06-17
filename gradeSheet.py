@@ -6,5 +6,6 @@ cgitb.enable()
 print 'Content-type: text/html\n\n'
 
 def go():
+    print 'yo'
 
 go():
