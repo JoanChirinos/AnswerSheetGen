@@ -58,7 +58,7 @@ def go():
     qnum = fs.getvalue('qnum', str(len(fs.keys()) - 2))
     for q in range(1, int(qnum) + 1):
 ##        try:
-        toWrite += ans(q, fs.getvalue(str(q)), correct[q - 1])
+        toWrite += ans(q, fs.getvalue(str(q)), corrects[q - 1])
 ##        except:
 ##            toWrite += ans(q, 'error', 'something went wrong here')
     print body[0] + toWrite + body[1]
