@@ -17,7 +17,7 @@ def go():
     except:
         qnum = 50
         
-    cnum = int(fs.getvalue('choices'))
+    cnum = int(fs.getvalue('options'))
 
     testname = fs.getvalue('testName')
     if testname.strip() == '':
