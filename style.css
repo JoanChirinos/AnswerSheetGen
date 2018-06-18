@@ -10,7 +10,7 @@
     height: 30px;
 }
 
-background {
+body {
     background-image: url(light-grey-terrazzo/light-grey-terrazzo.png);
     background-repeat: repeat;
 }
