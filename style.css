@@ -9,3 +9,8 @@
 .lg-space {
     height: 30px;
 }
+
+background {
+    background-image: url(light-grey-terrazzo/light-grey-terrazzo.png);
+    background-repeat: repeat;
+}
