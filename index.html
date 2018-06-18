@@ -1,21 +1,23 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="author" content="Joan Chirinos">
-      
 
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-        
-        <link rel="stylesheet" type="text/css" href="style.css">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Joan Chirinos">
 
-        <title>Answer Sheet Generator</title>
-    </head>
-    <body>
-        <form action="makeSheet.py" method="get" id="mainForm">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <title>Answer Sheet Generator</title>
+</head>
+
+<body>
+    <form action="makeSheet.py" method="get" id="mainForm">
         <div class="container text-center">
             <div class="row">
                 <div class="col text-center">
@@ -28,75 +30,78 @@
                     <label for="testName">Test name:</label>
                 </div>
                 <div class="col-sm">
-                    
-                        <input type="text" name="testName" placeholder="Okay to leave blank" id="testName" class="form-control" form="mainForm">
+
+                    <input type="text" name="testName" placeholder="Okay to leave blank" id="testName" class="form-control" form="mainForm">
                 </div>
             </div>
             <div class="md-space"></div>
             <div class="row">
                 <div class="col">
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-sm-5">
-                                    <label for="numberOfQuestions">Number of Questions</label>
-                                </div>
-                                <div class="col-sm-7">
-                                    <input type="range" class="custom-range" id="numberOfQuestions" min="1" max="200" name="numberOfQuestions" value="100" onchange="updateFromRange();" form="mainForm">
-                                </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-sm-5">
+                                <label for="numberOfQuestions">Number of Questions</label>
                             </div>
-                            <div class="md-space"></div>
-                            <div class="row align-items-center">
-                                <div class="col-sm-5">
-                                    <input type="number" class="form-control" name="questionDisplay" id="questionDisplay" value="100" onkeyup="updateFromDisplay();" max="200" min="1" step="1" form="mainForm">
-                                </div>
-                                <div class="col-sm-7">
-                                    <small>Please note that the number of questions should be from 1 to 200, inclusive.</small>
-                                </div>
+                            <div class="col-sm-7">
+                                <input type="range" class="custom-range" id="numberOfQuestions" min="1" max="200" name="numberOfQuestions" value="100" onchange="updateFromRange();" form="mainForm">
                             </div>
-                            <div class="md-space"></div>
-                            <div class="row align-items-center">
-                                <div class="col-sm-5">
-                                    <label for="choicesPerQuestion">Choices per question: </label>
-                                </div>
-                                <div class="col-sm-7">
-                                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                        <label class="btn btn-secondary active">
+                        </div>
+                        <div class="md-space"></div>
+                        <div class="row align-items-center">
+                            <div class="col-sm-5">
+                                <input type="number" class="form-control" name="questionDisplay" id="questionDisplay" value="100" onkeyup="updateFromDisplay();" max="200" min="1" step="1" form="mainForm">
+                            </div>
+                            <div class="col-sm-7">
+                                <small>Please note that the number of questions should be from 1 to 200, inclusive.</small>
+                            </div>
+                        </div>
+                        <div class="md-space"></div>
+                        <div class="row align-items-center">
+                            <div class="col-sm-5">
+                                <label for="choicesPerQuestion">Choices per question: </label>
+                            </div>
+                            <div class="col-sm-7">
+                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                    <label class="btn btn-secondary active">
                                             <input type="radio" name="options" id="option1" autocomplete="off" checked value="4" form="mainForm"> 4
                                         </label>
-                                        <label class="btn btn-secondary">
+                                    <label class="btn btn-secondary">
                                             <input type="radio" name="options" id="option2" autocomplete="off" value="5" form="mainForm"> 5
                                         </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="md-space"></div>
-                            <div class="row">
-                                <div class="col">
-                                    <input type="submit" class="btn btn-primary" value="Make me an answer sheet!" form="mainForm">
                                 </div>
                             </div>
                         </div>
-                    
+                        <div class="md-space"></div>
+                        <div class="row">
+                            <div class="col">
+                                <input type="submit" class="btn btn-primary" value="Make me an answer sheet!" form="mainForm">
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
-        </form>
+    </form>
 
-        <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-        <script>
-            function updateFromRange() {
-                var val = document.getElementById("numberOfQuestions").value;
-                document.getElementById("questionDisplay").value = val + "";
-            }
-            function updateFromDisplay() {
-                var val = document.getElementById("questionDisplay").value;
-                console.log(val);
-                document.getElementById("numberOfQuestions").value = val + "";
-            }
-        </script>
-    </body>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <script>
+        function updateFromRange() {
+            var val = document.getElementById("numberOfQuestions").value;
+            document.getElementById("questionDisplay").value = val + "";
+        }
+
+        function updateFromDisplay() {
+            var val = document.getElementById("questionDisplay").value;
+            console.log(val);
+            document.getElementById("numberOfQuestions").value = val + "";
+        }
+
+    </script>
+</body>
+
 </html>
